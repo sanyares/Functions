@@ -5,7 +5,8 @@ using namespace std;
 
 
 double power(double a, int n);
-
+double ch = 1; //переменная для цикла
+int i = 1;     //переменная для цикла
 #define POWER
 
 void main()
@@ -22,8 +23,23 @@ void main()
 }
 	double power(double a, int n)
 	{
-		if (n == 0)return 1;
-		else if (n > 0)return a * power(a, n - 1);
-		else return 1 / a * power(a, n + 1);
+		if (n == 0)
+		{
+			a = 1;
+		}
+			
+		else 
+		 {
+			for (i = 1; i <= n; i++)
+				
+			ch = ch * a;
+		
+	     }
+		return ch; 
+
+		 
+		
+
+		
 		
 	}
