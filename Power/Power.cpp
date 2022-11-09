@@ -29,6 +29,13 @@ void main()
 		}
 			
 		else 
+		if (n < 0)
+			return 1 / a * power(a, n + 1);
+
+		
+
+		if (n>0)
+		
 		 {
 			for (i = 1; i <= n; i++)
 				
@@ -37,6 +44,12 @@ void main()
 	     }
 		return ch; 
 
+
+		
+	    
+	     
+	    
+		 
 		 
 		
 
