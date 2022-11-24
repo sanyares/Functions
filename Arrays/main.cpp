@@ -67,7 +67,7 @@ void main()
 
 	setlocale(LC_ALL, "");
 	const int n = 5;
-	int arr[n] = { 1,2,3,4,5};
+	int arr[n];
 	FillRand(arr, n);
 	Print(arr, n);
 	Sort(arr, n);
@@ -88,11 +88,6 @@ void main()
 	cout << "Минимальное значение в  массиве: " << minValueIn(brr, SIZE) << endl;
 	cout << "Максимальное значение в  массиве: " << maxValueIn(brr, SIZE) << endl;
 
-	const int D_SIZE = 5;
-	double d_arr[D_SIZE];
-	FillRand(d_arr, D_SIZE);
-	Print(d_arr, D_SIZE);
-	Sort(d_arr, D_SIZE);
 
 
 	int i_arr_2[ROWS][COLS];
