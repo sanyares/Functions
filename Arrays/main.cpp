@@ -107,13 +107,7 @@ void main()
 
 	
 
-	double d_arr_2[ROWS][COLS];
-	FillRand(d_arr_2, ROWS, COLS);
-	Print(d_arr_2, ROWS, COLS);
-	cout << "Сумма элементов массива: " << Sum(d_arr_2, ROWS, COLS) << endl;
-	cout << "Среднее-арифметическое элементов массива: " << Avg(d_arr_2, ROWS, COLS) << endl;
-	cout << "Минимальное значение в  массиве: " << minValueIn(d_arr_2, ROWS, COLS) << endl;
-	cout << "Максимальное значение в  массиве: " << maxValueIn(d_arr_2, ROWS, COLS) << endl;
+	
 }
 
 void FillRand(int arr[], const int n)
