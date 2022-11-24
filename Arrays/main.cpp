@@ -23,7 +23,6 @@ void Print(float arr[ROWS][COLS], const int ROWS, const int COLS);
 int Sum(int arr[], const int n);
 double Sum(double arr[], const int n);
 float Sum(float arr[], const int n);
-
 int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS);
 double Sum(double arr[ROWS][COLS], const int ROWS, const int COLS);
 float Sum(float arr[ROWS][COLS], const int ROWS, const int COLS);
@@ -34,7 +33,6 @@ void Sort(double arr[], const int n);
 double Avg(int arr[], const int n);
 double Avg(double arr[], const int n);
 float Avg(float arr[], const int n);
-
 double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS);
 double Avg(double arr[ROWS][COLS], const int ROWS, const int COLS);
 float Avg(float arr[ROWS][COLS], const int ROWS, const int COLS);
@@ -42,7 +40,6 @@ float Avg(float arr[ROWS][COLS], const int ROWS, const int COLS);
 int minValueIn(int arr[], const int n);
 double minValueIn(double arr[], const int n);
 float minValueIn(float arr[], int n);
-
 int maxValueIn(int arr[], const int n);
 double maxValueIn(double arr[], const int n);
 float maxValueIn(float arr[], int n);
@@ -50,7 +47,6 @@ float maxValueIn(float arr[], int n);
 int minValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);
 double minValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS);
 float minValueIn(float arr[ROWS][COLS], const int ROWS, const int COLS);
-
 int maxValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS);
 double maxValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS);
 float maxValueIn(float arr[ROWS][COLS], const int ROWS, const int COLS);
@@ -63,30 +59,32 @@ void shiftRight(int arr[], int n, int number_of_shifts);
 void shiftRight(double arr[], int n, int number_of_shifts);
 void shiftRight(float arr[], int n, int number_of_shifts);
 
+void shiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts);
 
 
-void main()
+void main() 
 {
+
 	setlocale(LC_ALL, "");
 	const int n = 5;
-	int arr[n];
+	int arr[n] = { 1,2,3,4,5};
 	FillRand(arr, n);
 	Print(arr, n);
 	Sort(arr, n);
 	Print(arr, n);
 	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
-	cout << "Среднее-арифметическое элементов массива: " << AVG(arr, n) << endl;
+	cout << "Среднее-арифметическое элементов массива: " << Avg(arr, n) << endl;
 	cout << "Минимальное значение в  массиве: " << minValueIn(arr, n) << endl;
 	cout << "Максимальное значение в  массиве: " << maxValueIn(arr, n) << endl;
 
 	const int SIZE = 8;
-	double brr[SIZE];
+	int brr[SIZE];
 	FillRand(brr, SIZE);
 	Print(brr, SIZE);
 	Sort(brr, SIZE);
 	Print(brr, SIZE);
 	cout << "Сумма элементов массива: " << Sum(brr, SIZE) << endl;
-	cout << "Среднее-арифметическое элементов массива: " << AVG(brr, SIZE) << endl;
+	cout << "Среднее-арифметическое элементов массива: " << Avg(brr, SIZE) << endl;
 	cout << "Минимальное значение в  массиве: " << minValueIn(brr, SIZE) << endl;
 	cout << "Максимальное значение в  массиве: " << maxValueIn(brr, SIZE) << endl;
 
@@ -100,22 +98,22 @@ void main()
 	int i_arr_2[ROWS][COLS];
 	FillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
-	cout << "d: " << Sum(i_arr_2, ROWS, COLS) << endl;
-	cout << "d: " << Avg(i_arr_2, ROWS, COLS) << endl;
-	cout << "d: " << minValueIn(i_arr_2, ROWS, COLS) << endl;
-	cout << "d: " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
+	cout << "Сумма элементов массива: " << Sum(i_arr_2, ROWS, COLS) << endl;
+	cout << "Среднее-арифметическое элементов массива: " << Avg(i_arr_2, ROWS, COLS) << endl;
+	cout << "Минимальное значение в  массиве: " << minValueIn(i_arr_2, ROWS, COLS) << endl;
+	cout << "Максимальное значение в  массиве: " << maxValueIn(i_arr_2, ROWS, COLS) << endl;
 	shiftLeft(i_arr_2, ROWS, COLS, 3);
 	Print(i_arr_2, ROWS, COLS);
 
-	cout << "\n-----------------------------------------------------\n";
+	
 
 	double d_arr_2[ROWS][COLS];
 	FillRand(d_arr_2, ROWS, COLS);
 	Print(d_arr_2, ROWS, COLS);
-	cout << "i: " << Sum(d_arr_2, ROWS, COLS) << endl;
-	cout << "i: " << Avg(d_arr_2, ROWS, COLS) << endl;
-	cout << "i: " << minValueIn(d_arr_2, ROWS, COLS) << endl;
-	cout << "i: " << maxValueIn(d_arr_2, ROWS, COLS) << endl;
+	cout << "Сумма элементов массива: " << Sum(d_arr_2, ROWS, COLS) << endl;
+	cout << "Среднее-арифметическое элементов массива: " << Avg(d_arr_2, ROWS, COLS) << endl;
+	cout << "Минимальное значение в  массиве: " << minValueIn(d_arr_2, ROWS, COLS) << endl;
+	cout << "Максимальное значение в  массиве: " << maxValueIn(d_arr_2, ROWS, COLS) << endl;
 }
 
 void FillRand(int arr[], const int n)
@@ -204,8 +202,6 @@ void Print(float arr[], const int n)
 	}
 	cout << endl;
 }
-
-
 void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
@@ -304,16 +300,16 @@ void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
 
 int Sum(int arr[], const int n)
 {
-	int sum = 0;
+	int Sum = 0;
 	for (int i = 0; i < n; i++)
 	{
-		sum += arr[i];
+		Sum += arr[i];
 	}
-	return sum;
+	return Sum;
 }
 double Sum(double arr[], const int n)
 {
-	int sum = 0;
+	double sum = 0;
 	for (int i = 0; i < n; i++)
 	{
 		sum += arr[i];
@@ -329,7 +325,6 @@ float Sum(float arr[], const int n)
 	}
 	return sum;
 }
-
 int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	int sum = 0;
@@ -363,8 +358,6 @@ float Sum(float arr[ROWS][COLS], const int ROWS, const int COLS)
 	return sum;
 }
 
-
-
 double AVG(int arr[], const int n)
 {
 	{
@@ -385,7 +378,6 @@ float Avg(float arr[], const int n)
 		return (float)Sum(arr, n) / n;
 	}
 }
-
 double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
@@ -430,7 +422,6 @@ float minValueIn(float arr[], int n)
 	}
 	return min;
 }
-
 int minValueIn(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	int min = arr[0][0];
@@ -467,8 +458,6 @@ float minValueIn(float arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return (char)min;
 }
-
-
 
 int maxValueIn(int arr[], const int n)
 
@@ -523,7 +512,6 @@ double maxValueIn(double arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return max;
 }
-
 float maxValueIn(float arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	float max = arr[0][0];
@@ -562,7 +550,6 @@ void shiftLeft(double arr[], int n, int number_of_shifts)
 		arr[n - 1] = buffer;
 	}
 }
-
 void shiftLeft(float arr[], int n, int number_of_shifts)
 {
 	for (int i = 0; i < number_of_shifts; i++)
@@ -575,7 +562,6 @@ void shiftLeft(float arr[], int n, int number_of_shifts)
 		arr[n - 1] = buffer;
 	}
 }
-
 void shiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int number_of_shifts)
 {
 	for (int i = 0; i < number_of_shifts; i++)
@@ -591,8 +577,8 @@ void shiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int number_o
 		arr[ROWS - 1][COLS - 1] = buffer;
 	}
 }
-
 void shiftRight(int arr[], int n, int number_of_shifts)
 {
 	shiftLeft(arr, n, n - number_of_shifts);
 }
+
